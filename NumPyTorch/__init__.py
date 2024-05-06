@@ -43,7 +43,7 @@ def load(path):
 
 
 def load_pytorch(model_path):
-    import torch
+    import torch  # real torch
     data = torch.load(model_path)
     return {f'{name}.value': value.cpu().numpy() for name, value in data.items()}
 

@@ -5,6 +5,7 @@ A lightweight framework, utilizes only NumPy for numerical forward inference
 
 requirements:
 ONLY NumPy and matplotlib
+pytorch is Optional (for model training use)
 
 @author: hammershock
 @email: hammershock@163.com
