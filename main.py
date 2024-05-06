@@ -13,8 +13,12 @@ ONLY NumPy and matplotlib
 import numpy as np
 from matplotlib import pyplot as plt
 
-import NumPyTorch.nn as nn
-import NumPyTorch as torch
+if __name__ == '__main__':
+    import NumPyTorch.nn as nn
+    import NumPyTorch as torch
+else:
+    import torch.nn as nn
+    import torch
 
 
 class CVAE(nn.Module):
@@ -110,11 +114,14 @@ class CVAE(nn.Module):
 if __name__ == "__main__":
     model = CVAE(64, 3)
 
-    state_dict = torch.load('models/cvae_celeba.pkl')  # fake torch, just load the .pkl file
+    state_dict = torch.load('models/cvae_celeba_decoder_only_fp16.pkl')  # fake torch, just load the .pkl file
     # If you don't mind installing the real PyTorch, you can convert the pth model to a fake PyTorch model using it
+    # torch.load_pytorch('models/cvae_celeba.pth')
+    # torch.save(state_dict, f'models/cvae_celeba.pkl')
     # Save state_dict in fake PyTorch format
     model.load_state_dict(state_dict)
-    # np.random.seed(42)
+    # exit(0)
+    # np.random.seed(27)
 
     # 40 labels
     labels = [-1, -1, -1, 1, 1,    # "五点钟胡须", "挑眉", "魅力", "眼袋", "秃头"
@@ -125,7 +132,8 @@ if __name__ == "__main__":
               -1, 1, -1, -1, -1,   # "椭圆脸型", "苍白肤色", "尖鼻子", "发际线后退", "红润脸颊"
               1, 1, 1, -1, 1,    # "鬓角", "微笑", "直发", "波浪发型", "耳环"
               -1, -1, 1, 1, 1]     # "戴帽子", "口红", "项链", "领带", "年轻"
-
+    # or use random labels
+    labels = np.sign(np.random.randn(1, 40))
     labels = np.array(labels).reshape(1, -1)
     hidden_z = np.random.randn(1, 64)
 
