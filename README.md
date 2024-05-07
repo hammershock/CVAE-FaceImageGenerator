@@ -21,7 +21,15 @@ This project implements a NumPy-based Conditional Convolutional Variational Auto
 
 ## Installation
 
-To set up your environment to run the CVAE, install the required packages using pip:
+1. Clone the repository and initialize submodules:
+   ```bash
+   git clone https://github.com/hammershock/CVAEGenerator.git
+   cd CVAEGenerator
+   git submodule init
+   git submodule update
+   ```
+   
+2. install the required packages using pip:
 
 ```bash
 pip install numpy matplotlib
