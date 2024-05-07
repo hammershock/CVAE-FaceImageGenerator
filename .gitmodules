@@ -1,0 +1,3 @@
+[submodule "NumPyTorch"]
+	path = NumPyTorch
+	url = git@github.com:hammershock/NumPyTorch.git
