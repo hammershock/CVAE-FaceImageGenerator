@@ -9,7 +9,7 @@ This project implements a NumPy-based Conditional Convolutional Variational Auto
 - **highly lightweight**, with a model size of 7.5 MB, the size reduced to ONLY 1.7MB (decoder only and fp16 quantized)
 - the NumPy implementation is closely mimics the behavior of native PyTorch.
 
-![image](https://github.com/hammershock/CVAEGenerator/assets/109429530/429fd044-f71f-4e42-9bfb-7dcd84d49fd6)
+![image](https://github.com/hammershock/CVAEGenerator/assets/109429530/da2e55ca-a146-4728-bc90-8db30e1844b4)
 
 
 ## Requirements
