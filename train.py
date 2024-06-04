@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# train.py
 """
 
 NOTICE: PyTorch & torchvision REQUIRED!!!

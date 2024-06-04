@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Format convert & Model Quantization
 
@@ -7,7 +8,6 @@ the size of the decoder-only model at fp16 ONLY takes about 1.7MB!
 """
 
 import numpy as np
-import pickle
 
 import NumPyTorch as torch  # fake torch
 

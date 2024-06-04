@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# main.py
 """
 A NumPy implementation of the Conditional Convolutional Variational Autoencoder (CVAE), trained on the Celeba Faces dataset.
 A lightweight framework, utilizes only NumPy for numerical forward inference
@@ -20,6 +21,8 @@ if __name__ == '__main__':
 else:
     import torch.nn as nn
     import torch
+
+from terminal_show import show
 
 
 class CVAE(nn.Module):
@@ -141,8 +144,13 @@ if __name__ == "__main__":
     labels = torch.FloatTensor(labels)
     hidden_z = torch.FloatTensor(hidden_z)
     result = model.decode(hidden_z, labels)
+    image = (result.squeeze(0).transpose(1, 2, 0))
+    show(image)  # display image using colorful chars
 
     # Display the image, use matplotlib
-    plt.imshow(result.squeeze(0).transpose(1, 2, 0))
-    plt.axis('off')  # Hide the axis
-    plt.show()
+    # fig, ax = plt.subplots()
+    # ax.imshow(image)
+    # ax.axis('off')
+    # plt.tight_layout(pad=0)
+    # fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
+    # plt.show()
