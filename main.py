@@ -145,7 +145,7 @@ if __name__ == "__main__":
     hidden_z = torch.FloatTensor(hidden_z)
     result = model.decode(hidden_z, labels)
     image = (result.squeeze(0).transpose(1, 2, 0))
-    show(image)  # display image using colorful chars
+    show(image, fill_char="█")  # display image using colorful chars
 
     # Display the image, use matplotlib
     # fig, ax = plt.subplots()

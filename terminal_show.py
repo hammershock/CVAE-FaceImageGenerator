@@ -24,7 +24,7 @@ def resize_image(image, cols, scale):
     return new_image
 
 
-def image_to_ascii(image, cols, scale):
+def image_to_ascii(image, cols, scale, fill_char="+"):
     resized_image = resize_image(image, cols, scale)
     chars = "@%#*+=-:. "
     ascii_image = []
@@ -37,7 +37,7 @@ def image_to_ascii(image, cols, scale):
             gray = r * 0.299 + g * 0.587 + b * 0.114
             # char = chars[int(gray * (len(chars) - 1))]
             char = '+'
-            line += rgb_to_ansi(r, g, b) + char + "\x1b[0m"  # 添加 ANSI 重置序列
+            line += rgb_to_ansi(r, g, b) + fill_char + "\x1b[0m"  # 添加 ANSI 重置序列
         ascii_image.append(line)
 
     return ascii_image
@@ -48,8 +48,8 @@ def print_ascii(ascii_image):
         print(line)
 
 
-def show(image_array, cols=150, scale=0.50):
-    ascii_image = image_to_ascii(image_array, cols, scale)
+def show(image_array, cols=150, scale=0.50, fill_char="+"):
+    ascii_image = image_to_ascii(image_array, cols, scale, fill_char=fill_char)
     print_ascii(ascii_image)
 
 # 例如使用
