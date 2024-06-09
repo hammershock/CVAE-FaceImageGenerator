@@ -12,9 +12,7 @@ This project implements a NumPy-based Conditional Convolutional Variational Auto
 ![image](https://github.com/hammershock/CVAEGenerator/assets/109429530/da2e55ca-a146-4728-bc90-8db30e1844b4)
 
 - ASCII art of Generations in terminal:
-
-![ASCII](https://github.com/hammershock/CVAEGenerator/assets/109429530/11889ed8-f888-4e65-846e-d4dd5531683e)
-
+<img src="https://github.com/hammershock/CVAEGenerator/assets/109429530/11889ed8-f888-4e65-846e-d4dd5531683e" width=300 height=350 alt="ASCII art">
 
 ## Requirements
 
