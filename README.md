@@ -1,56 +1,44 @@
-# Conditional Convolutional Variational Autoencoder (CVAE)
+# CVAE-FaceImageGenerator
 
-CVAE Image generator, implementation relies solely on NumPy
+核心功能仅使用`numpy`实现的条件卷积变分自编码器（CVAE）人脸图像生成模型。
 
-This project implements a NumPy-based Conditional Convolutional Variational Autoencoder (CVAE) trained on the CelebA Faces dataset. The implementation is designed to operate with minimal dependencies, specifically using only NumPy and matplotlib for the core functionality. PyTorch is optional and is used only for model training.
+[English docs](./README_EN.md)
 
-## Features
+## 特点
 
-- **highly lightweight**, with a model size of 7.5 MB, the size reduced to ONLY 1.7MB (decoder only and fp16 quantized)
-- the NumPy implementation is closely mimics the behavior of native PyTorch.
+- **高度轻量化**: DecoderOnly且fp16量化之后大小仅有1.7MB
+- 使用numpy实现高度类似Pytorch的接口
+- 支持使用彩色字符显示图像(ASCII Art)
 
-![image](https://github.com/hammershock/CVAEGenerator/assets/109429530/da2e55ca-a146-4728-bc90-8db30e1844b4)
+![myplot.png](assets/myplot.png)
 
-- ASCII art of Generations in terminal:
-<img src="https://github.com/hammershock/CVAEGenerator/assets/109429530/11889ed8-f888-4e65-846e-d4dd5531683e" width=300 height=350 alt="ASCII art">
-
-## Requirements
-
-- **NumPy**
+## 依赖
+- **numpy**
 - **matplotlib**
-- **PyTorch** (optional, for training the model)
-- **torchvision** (optional, for handling the CelebA dataset during training)
+- **PyTorch**（可选，仅用于训练模型）
+- **torchvision**（可选，用于处理训练期间的CelebA数据集）
 
-## Installation
-
-1. Clone the repository and initialize submodules:
+## 安装
+1. 克隆仓库并初始化子模块：
    ```bash
-   git clone https://github.com/hammershock/CVAEGenerator.git
+   git clone --recurse-submodules https://github.com/hammershock/CVAEGenerator.git
    cd CVAEGenerator
-   git submodule init
-   git submodule update
    ```
-   
-2. install the required packages using pip:
 
-```bash
-pip install numpy matplotlib
-pip install torch torchvision  # For training only
-```
+2. 使用pip安装所需的软件包：
+   ```bash
+   pip install numpy matplotlib
+   pip install torch torchvision  # 仅用于训练
+   ```
 
-## Usage
+## 使用方法
 
-- Run `main.py` to execute a pre-trained model and visualize outputs.
-- Use `train.py` to train a new model or continue training an existing model.
-- Just Enjoy it!
+- 运行 `main.py` 进行推理，使用预训练模型生成人脸图像
+- 训练模型 `train.py` 
 
-## Data
+## 数据集
 
-The CelebA dataset is used in this project. Ensure you have downloaded and properly placed the dataset in the expected directory. You can find the dataset at [CelebA Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html).
+该项目使用[CelebA数据集](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)。
 
-
-- The model integrates image attributes into its architecture, making it capable of generating conditioned facial images.
-- The system provides support for both loading pre-trained weights and training from scratch using PyTorch.
-
-  
-Feel free to reach out for any queries or suggestions regarding this implementation.
+- 模型将图像属性集成到其架构中，使其能够生成有条件的人脸图像。
+- 该系统支持加载预训练权重和使用PyTorch从头开始训练。

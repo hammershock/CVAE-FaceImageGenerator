@@ -148,9 +148,9 @@ if __name__ == "__main__":
     show(image, fill_char="█")  # display image using colorful chars
 
     # Display the image, use matplotlib
-    # fig, ax = plt.subplots()
-    # ax.imshow(image)
-    # ax.axis('off')
-    # plt.tight_layout(pad=0)
-    # fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
-    # plt.show()
+    fig, ax = plt.subplots()
+    ax.imshow(image)
+    ax.axis('off')
+    plt.tight_layout(pad=0)
+    fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
+    plt.show()
